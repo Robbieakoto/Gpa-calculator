@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My first Javascript</title>  
+</head>
+<body>
+
+    <CENTER>
+	<div>
+		<h1>Student Ages </h1>
+		
+		<ul style="list-style:none;">
+			<li>Baffour : 
+				<input type="number" value="24" id="baffour" readonly>
+			</li><br>
+			<li>Roberta : 
+				<input type="number" value="22" id="roberta" readonly>
+			</li><br>			
+			<li>Saliha : 
+				<input type="number" value="21" id="saliha" readonly>
+			</li><br>
+			<li>Michael: 
+				<input type="number" value="23" id="michael" readonly>
+			</li><br>
+			<li>Asare : 
+				<input type="number" value="22" id="asare" readonly>
+			</li><br>
+			<li>Emma : 
+				<input type="number" value="24" id="emma" readonly>
+			</li>	
+		<ul>
+		
+		<br><br>
+		<input type="button" onclick="calAverageAge();" name="ok" value="Calculate Average Age"/>
+		<br><br>
+		
+			<div id="averageAge"></div>
+
+	</div>
+	<br><br>
+	<h1> GPA Calculator</h1>
+    <Table border="1" bgcolor="#00ff00" cellpadding="5" cellspacing="2">
+
+            <TH>Courses</TH>
+            <TH>Grade </TH>
+            <TH>Credits hours</TH>
+           
+            <TR>
+            <TD>Software Engineering</TD>
+            <TD><Input type="text" size="5"  align="top" id="gpa1" value="80" maxlength="5"></TD>
+            <TD><Input type="text" size="5"  align="top" value="3" maxlength="5"></TD>
+           
+            </TR>
+            <TR>
+				<TD>Web Technologies</TD>
+				<TD><Input type="text" size="5"  align="top" id="gpa2" value="80" maxlength="5"></TD>
+				<TD><Input type="text" size="5" align="top" value="3"  maxlength="5"></TD>      
+            </TR>
+            <TR>
+				<TD>Data Communiaction</TD>
+				<TD><Input type="text" size="5"  align="top" id="gpa3" value="90" maxlength="5"></TD>
+				<TD><Input type="text" Size="5"  align="top" value="3" maxlength="5"></TD>   
+            </TR>
+            <TR>
+				<TD>Object Oriented Programming</TD>
+				<TD><Input type="text" size="5"  align="top" id="gpa4" value="80" maxlength="5"></TD>
+				<TD><Input type="text" size="5"  align="top" value="3" maxlength="5"></TD>
+            </TR>
+            <TR>
+				<TD>Operating Systems</TD>
+				<TD><Input type="text" size="5"  align="top" id="gpa5" value="85"></TD>
+				<TD><Input type="text" size="5"  align="top" value="3" ></TD>
+               
+            </TR>
+            <TR>
+				<TD>Advanced Database</TD>
+				<TD><Input type="text" size="5"  align="top" id="gpa6" value="85" maxlength="5"></TD>
+				<TD><Input type="text" size="5"  value="3" maxlength="5"></TD>
+            </TR>
+                
+	</TABLE>
+	<br><br>
+	<input type="button" onclick="calGpa();" name="ok" value="Calculate GPA"/>
+	<br><br>
+	
+	<div id="totalGpa"></div>
+	
+
+</CENTER>
+
+
+        <script type="text/javascript">
+		
+		function calGpa() {
+                    var softwareEngineering = document.getElementById('gpa1').value;
+                    var webTech = document.getElementById('gpa2').value;
+                    var dataCommunicationII = document.getElementById('gpa3').value;
+                    var OOP = document.getElementById('gpa4').value;
+                    var operatingSystems = document.getElementById('gpa5').value;
+                    var AdvancedDatabase= document.getElementById('gpa6').value;
+                    var credithours = 3;
+					
+					var totalCreditHours = 3 * 6;
+					var totalGradePoints = softwareEngineering + webTech + dataCommunicationII + OOP + operatingSystems + AdvancedDatabase;
+					
+					var gpa = totalGradePoints / totalCreditHours;
+					
+                   
+                    //document.writeln("GPA = " + gpa);
+					document.getElementById('totalGpa').innerHTML = "GPA = " + gpa;
+		}
+		
+		
+		function calAverageAge() {
+		
+					var baffour = 24;
+				    var roberta = 22;
+					var saliha = 21;
+					var michael = 23;
+					var asare = 22;
+					var emma = 24;
+					
+					
+					var averageAge = (baffour + roberta + saliha + michael + asare + emma)/6;
+    
+					//document.write("Student Average= "+ average);
+					 document.getElementById('averageAge').innerHTML = "Student Average Age = " + averageAge;
+		
+		
+		}
+    
+		</script>
+ 
+    
+</body>
+</html>
